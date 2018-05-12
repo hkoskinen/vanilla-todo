@@ -97,8 +97,6 @@ ul {
 /* ------------------------------------------------------------------
   todo styles
 ------------------------------------------------------------------ */
-.todo-list {
-}
 .todo-list__item {
   border: 1px solid rgba(0,0,0,.1);
   padding: .9em .8em .8em .8em;
@@ -119,6 +117,13 @@ ul {
 }
 .todo-list__item i {
   margin-top: 1px;
+}
+.remove-item {
+  cursor: pointer;
+  transition: color .2s ease-out;
+}
+.remove-item:hover {
+  color: rgba(255,255,255,.6);
 }
 
 /* ------------------------------------------------------------------
