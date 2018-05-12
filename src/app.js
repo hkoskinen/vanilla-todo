@@ -1,21 +1,25 @@
-(function() {
+(() => {
   'use strict';
 
   const todoList = document.querySelector('.todo-list');
   const inputField = document.querySelector('.todo-form__input');
   const addButton = document.querySelector('.todo-form__button');
 
-  const helper = (function() {
+  const helper = (() => {
+
     const _storageType = sessionStorage;
-    const _storageKey = 'muh_todos';
-    function escape(input) {
-      return input.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/&/g, '&amp;');
+    const _storageKey = 'vanilla-todo-app-items';
+
+    function _escape(input) {
+      return input.replace(/</g, '&lt;')
+                  .replace(/>/g, '&gt;')
+                  .replace(/&/g, '&amp;');
     }
 
     function createTodo(text) {
       const li = document.createElement('li');
-      li.classList.add('todo-list__item');
-      li.appendChild(document.createTextNode(escape(text)));
+      li.className = 'todo-list__item';
+      li.appendChild(document.createTextNode(_escape(text)));
 
       const del = document.createElement('a');
       del.className = 'remove-item';
@@ -24,7 +28,7 @@
       return li;
     }
 
-    function accessStorage() {
+    function _accessStorage() {
       let items;
       if (_storageType.getItem(_storageKey) === null) {
         items = [];
@@ -35,18 +39,18 @@
     }
 
     function save(item) {
-      let items = accessStorage();
+      let items = _accessStorage();
       items.push(item);
       _storageType.setItem(_storageKey, JSON.stringify(items));
     }
 
     function load() {
-      let items = accessStorage();
+      let items = _accessStorage();
       return items;
     }
 
     function remove(removedItem) {
-      let items = accessStorage();
+      let items = _accessStorage();
       const remainingItems = items.filter(item => {
         return item.toLowerCase() !== removedItem.toLowerCase();
       });
@@ -88,4 +92,4 @@
   addButton.addEventListener('click', handleAddButton);
   todoList.addEventListener('click', handleRemoveItem);
   document.addEventListener('DOMContentLoaded', handleInitialLoad);
-}());
+})();
