@@ -1,0 +1,57 @@
+/* ------------------------------------------------------------------
+  general base styles / reset
+------------------------------------------------------------------ */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 100%;
+  color: #454545;
+  padding: 1em;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------
+  general app styles
+------------------------------------------------------------------ */
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.app__title {
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------
+  form styles
+------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------
+  todo styles
+------------------------------------------------------------------ */
+.todo-list {
+  border: 1px solid rgba(0,0,0,.2);
+}
+.todo-list__item {
+  border: 1px solid rgba(0,0,0,.2);
+  padding: .8em .5em;
+  margin-bottom: .8em;
+  transition: background-color .2s ease-out;
+}
+.todo-list__item:last-child {
+  margin-bottom: 0;
+}
+.todo-list__item:hover {
+  background-color: #eee;
+}
