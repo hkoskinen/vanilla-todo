@@ -35,19 +35,52 @@ ul {
 /* ------------------------------------------------------------------
   form styles
 ------------------------------------------------------------------ */
-
+.todo-form {
+  display: flex;
+}
+.todo-form__input {
+  flex-grow: 2;
+  outline: 0;
+  border: 1px solid rgba(0,0,0, 0.1);
+  border-right: 0;
+  padding: .8em .5em;
+  border-radius: 3px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 1em;
+}
+.todo-form__button {
+  background-color: #454545;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-transform: uppercase;
+  font-weight: 100;
+  transition: background-color .2s ease-out;
+}
+.todo-form__button:hover {
+  cursor: pointer;
+  background-color: #555;
+}
 
 /* ------------------------------------------------------------------
   todo styles
 ------------------------------------------------------------------ */
 .todo-list {
-  border: 1px solid rgba(0,0,0,.2);
 }
 .todo-list__item {
-  border: 1px solid rgba(0,0,0,.2);
-  padding: .8em .5em;
+  border: 1px solid rgba(0,0,0,.1);
+  padding: .8em 1em;
   margin-bottom: .8em;
   transition: background-color .2s ease-out;
+  border-radius: 3px;
+  display:flex;
+  justify-content: space-between;
 }
 .todo-list__item:last-child {
   margin-bottom: 0;
