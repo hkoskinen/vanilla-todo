@@ -16,7 +16,7 @@
       li.appendChild(document.createTextNode(escape(text)));
 
       const del = document.createElement('a');
-      del.className = 'delete-item';
+      del.className = 'remove-item';
       del.innerHTML = '<i class="fa fa-trash"></i>';
       li.appendChild(del);
       return li;
@@ -36,8 +36,9 @@
   };
 
   const handleRemoveItem = (e) => {
-    if (e.target.parentElement.classList.contains('delete-item')) {
-      console.log('trash');
+    const parent = e.target.parentElement;
+    if (parent.classList.contains('remove-item')) {
+      parent.parentElement.remove();
     }
   };
 
