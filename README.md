@@ -2,4 +2,10 @@
 
 Todo app made with vanilla JavaScript. Stores items in the localStorage.
 
-![todowip2](https://user-images.githubusercontent.com/2076853/39959714-67842c20-561e-11e8-8546-daefbd8bda58.jpg)
+### Notes ###
+
+Uses ES6 features that are not supported in IE, so will break in IE.
+Might add babel later.
+
+![screenshot](https://user-images.githubusercontent.com/2076853/39971206-22208966-5700-11e8-9a3e-060b16e345f8.png)
+
