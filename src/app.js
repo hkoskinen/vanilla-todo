@@ -7,7 +7,7 @@
 
   const helper = (() => {
 
-    const _storageType = sessionStorage;
+    const _storageType = localStorage;
     const _storageKey = 'vanilla-todo-app-items';
 
     function _escape(input) {
@@ -49,6 +49,7 @@
       return items;
     }
 
+    // FIXME: If you have duplicate items, this will remove them all from storage.
     function remove(removedItem) {
       let items = _accessStorage();
       const remainingItems = items.filter(item => {
